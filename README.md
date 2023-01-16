@@ -40,7 +40,10 @@ I plan to be using miro to flesh put my Wireframes and a vs code extension calle
 - User profiles
 - Ability to mark request as 'ready to mail', 'mailed', and 'completed'
 
-<!-- ### Wireframe -->
+### Wireframe
+
+![](./imgs/landing-cart.jpg)
+![](./imgs/gallery-aboutme.jpg)
 
 <!-- ### Erd's -->
 
