@@ -35,7 +35,7 @@ I plan to be using miro to flesh put my Wireframes and a vs code extension calle
 - Auth for transactions as transfers
 - Notifications sent to owner for request and purchases
 
-## Stretch Goals
+### Stretch Goals
 - User can review site
 - User profiles
 - Ability to mark request as 'ready to mail', 'mailed', and 'completed'
@@ -45,8 +45,48 @@ I plan to be using miro to flesh put my Wireframes and a vs code extension calle
 ![](./imgs/landing-cart.jpg)
 ![](./imgs/gallery-aboutme.jpg)
 
-<!-- ### Erd's -->
+### Erd's
 
-<!-- ### Restful Routes -->
+![](./imgs/Gallery-Erd.jpg)
+
+
+## RESTful Routes
+
+
+### User
+| HTTP METHOD | URL              | CRUD    | Response                              |
+| ----------- | ---------------- | ------- | ------------------------------------- |
+| GET | `/users/:userId` | READ | return a specific user as json (status 200) |
+| POST | `/users/register` | CREATE | create a user in the database and send back as json (status 201) |
+| PUT | `/users/:userId` | UPDATE | update a user in the database and send back as json (status 200) |
+| DELETE | `/users/:userId` | DESTROY | delete a user from the database (status 204) |
+
+
+### Cart
+| HTTP METHOD | URL              | CRUD    | Response                              |
+| ----------- | ---------------- | ------- | ------------------------------------- |
+| GET | `/users/:userId/cart` | READ | see a user's cart as json(status 200) |
+| PUT | `/users/:userId/cart/:artworkId` | UPDATE | add artwork to cart json (status 200) |
+| PUT | `/users/:userId/cart/:artworkId/remove` | UPDATE | ability to remove cart as json (status 200) |
+| PUT | `/users/:userId/cart/:artworkId` | UPDATE | checkout form cart as json (status 200) |
+
+
+### Artworks
+| HTTP METHOD | URL              | CRUD    | Response                              |
+| ----------- | ---------------- | ------- | ------------------------------------- |
+| GET | `/artworks` | READ | return all artworks as json (status 200) |
+| GET | `/artworks/:artworkId` | READ | return a specific artwork as json (status 200) |
+| POST | `/artworks` | CREATE | create a artwork in the database and send back as json (status 201) |
+| PUT | `/artworks/:artworkId` | UPDATE | update a artwork in the database and send back as json (status 200) 
+| DELETE | `/artworks/:artworkId` | DESTROY | delete a artwork from the database (status 204) |
+| POST | `/artworks/:artworkId/comments` | CREATE | create a comment in the database and send back as json (status 201) |
+
+### User
+| HTTP METHOD | URL              | CRUD    | Response                              |
+| ----------- | ---------------- | ------- | ------------------------------------- |
+| GET | `/orders/:orderId` | READ | return a specific order as json (status 200) |
+| POST | `/orders/register` | CREATE | create a order in the database and send back as json (status 201) |
+| PUT | `/orders/:orderId` | UPDATE | update a order in the database and send back as json (status 200) |
+| DELETE | `/orders/:orderId` | DESTROY | delete a order from the database (status 204) |
 
 <!-- ### Sources -->
