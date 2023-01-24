@@ -1,4 +1,4 @@
-import  express  from 'express';
+import express from 'express';
 import controller from '../controllers/Order';
 import { Schemas, ValidateSchema } from '../middleware/ValidateSchema';
 
