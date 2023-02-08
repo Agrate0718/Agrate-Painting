@@ -17,7 +17,7 @@ const validateToken = (req: Request, res: Response, next: NextFunction) => {
 };
 
 const register = (req: Request, res: Response, next: NextFunction) => {
-    let { name1, password, name2, email } = req.body;
+    let { firstName, password, lastName, email } = req.body;
 
     bcryptjs.hash(password, 10, (hashError, hash) => {
         if (hashError) {
@@ -29,8 +29,8 @@ const register = (req: Request, res: Response, next: NextFunction) => {
 
         const user: any = new User({
             _id: new mongoose.Types.ObjectId(),
-            name1,
-            name2,
+            firstName,
+            lastName,
             email,
             password: hash
         });
@@ -43,9 +43,9 @@ const register = (req: Request, res: Response, next: NextFunction) => {
 };
 
 const login = (req: Request, res: Response, next: NextFunction) => {
-    let { name1, password } = req.body;
+    let { firstName, password } = req.body;
 
-    User.find({ name1 })
+    User.find({ firstName })
         .exec()
         .then((users) => {
             if (users.length !== 1) {
@@ -107,10 +107,10 @@ const getAllusers = (req: Request, res: Response, next: NextFunction) => {
 };
 
 const deleteUser = (req: Request, res: Response, next: NextFunction) => {
-    const name1 = req.params.name1;
-    console.log('name1:', name1);
+    const firstName = req.params.firstName;
+    console.log('firstName:', firstName);
 
-    return User.findOneAndDelete({ name1: name1 })
+    return User.findOneAndDelete({ firstName: firstName })
         .then((user) => (user ? res.status(201).json({ message: 'deleted' }) : res.status(404).json({ message: 'Not found' })))
         .catch((error) => res.status(500).json({ error }));
 };

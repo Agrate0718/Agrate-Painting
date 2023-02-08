@@ -28,7 +28,7 @@ const ArtworkSchema = new mongoose_1.Schema({
     title: { type: String, required: true },
     picture: { type: String, required: true },
     price: { type: Number, required: true },
-    medium: { type: String, required: true },
+    medium: { type: String, required: true }
 }, {
     timestamps: true
 });

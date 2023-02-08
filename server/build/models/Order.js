@@ -30,7 +30,7 @@ const OrderSchema = new mongoose_1.Schema({
     streetAddress: { type: String, required: true },
     city: { type: String, required: true },
     zip: { type: Number, required: true },
-    phone: { type: String, required: true },
+    phone: { type: String, required: true }
 }, {
     timestamps: true
 });

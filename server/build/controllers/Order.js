@@ -9,7 +9,12 @@ const createOrder = (req, res, next) => {
     const { user, country, streetAddress, city, zip, phone } = req.body;
     const order = new Order_1.default({
         _id: new mongoose_1.default.Types.ObjectId(),
-        user, country, streetAddress, city, zip, phone
+        user,
+        country,
+        streetAddress,
+        city,
+        zip,
+        phone
     });
     return order
         .save()
@@ -20,9 +25,11 @@ const readOrder = (req, res, next) => {
     const orderId = req.params.orderId;
     return Order_1.default.findById(orderId)
         .populate('user')
-        .then((order) => (order ? res.status(200).json({ order }) : res.status(404).json({
-        message: 'Not found'
-    })))
+        .then((order) => order
+        ? res.status(200).json({ order })
+        : res.status(404).json({
+            message: 'Not found'
+        }))
         .catch((error) => res.status(500).json({ error }));
 };
 const readAll = (req, res, next) => {
@@ -51,8 +58,7 @@ const updateOrder = (req, res, next) => {
 const deleteOrder = (req, res, next) => {
     const orderId = req.params.orderId;
     return Order_1.default.findByIdAndDelete(orderId)
-        .then(order => (order ? res.status(201).json({ message: 'deleted' }) : res.status(404)
-        .json({ message: 'Not found' })))
+        .then((order) => (order ? res.status(201).json({ message: 'deleted' }) : res.status(404).json({ message: 'Not found' })))
         .catch((error) => res.status(500).json({ error }));
 };
 exports.default = { createOrder, readOrder, readAll, updateOrder, deleteOrder };

@@ -50,47 +50,55 @@ exports.Schemas = {
             title: joi_1.default.string().required(),
             picture: joi_1.default.string().required(),
             price: joi_1.default.string().required(),
-            medium: joi_1.default.string().required(),
+            medium: joi_1.default.string().required()
         }),
         update: joi_1.default.object({
             title: joi_1.default.string().required(),
             picture: joi_1.default.string().required(),
             price: joi_1.default.string().required(),
-            medium: joi_1.default.string().required(),
+            medium: joi_1.default.string().required()
         })
     },
     inquire: {
         create: joi_1.default.object({
-            user: joi_1.default.string().regex(/^[0-9a-fA-F]{24}$/).required(),
+            user: joi_1.default.string()
+                .regex(/^[0-9a-fA-F]{24}$/)
+                .required(),
             color: joi_1.default.string().required(),
             prompt: joi_1.default.string().required(),
             design: joi_1.default.string().required(),
-            details: joi_1.default.string().required(),
+            details: joi_1.default.string().required()
         }),
         update: joi_1.default.object({
-            user: joi_1.default.string().regex(/^[0-9a-fA-F]{24}$/).required(),
+            user: joi_1.default.string()
+                .regex(/^[0-9a-fA-F]{24}$/)
+                .required(),
             color: joi_1.default.string().required(),
             prompt: joi_1.default.string().required(),
             design: joi_1.default.string().required(),
-            details: joi_1.default.string().required(),
+            details: joi_1.default.string().required()
         })
     },
     order: {
         create: joi_1.default.object({
-            user: joi_1.default.string().regex(/^[0-9a-fA-F]{24}$/).required(),
+            user: joi_1.default.string()
+                .regex(/^[0-9a-fA-F]{24}$/)
+                .required(),
             country: joi_1.default.string().required(),
             streetAddress: joi_1.default.string().required(),
             city: joi_1.default.string().required(),
             zip: joi_1.default.number().required(),
-            phone: joi_1.default.string().required(),
+            phone: joi_1.default.string().required()
         }),
         update: joi_1.default.object({
-            user: joi_1.default.string().regex(/^[0-9a-fA-F]{24}$/).required(),
+            user: joi_1.default.string()
+                .regex(/^[0-9a-fA-F]{24}$/)
+                .required(),
             country: joi_1.default.string().required(),
             streetAddress: joi_1.default.string().required(),
             city: joi_1.default.string().required(),
             zip: joi_1.default.number().required(),
-            phone: joi_1.default.string().required(),
+            phone: joi_1.default.string().required()
         })
     }
 };

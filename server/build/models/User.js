@@ -29,7 +29,7 @@ const UserSchema = new mongoose_1.Schema({
     lastName: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    shoppingCart: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Artwork", required: false },
+    shoppingCart: { type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Artwork', required: false }
 }, {
     timestamps: true
 });

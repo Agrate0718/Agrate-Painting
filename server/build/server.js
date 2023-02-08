@@ -27,17 +27,17 @@ mongoose_1.default
 // Only start the server if Mongo Connects
 const StartServer = () => {
     router.use((req, res, next) => {
-        // Log the request 
+        // Log the request
         Logging_1.default.info(`Incoming -> Method: [${req.method}] - Url: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
         res.on('finish', () => {
-            // Log the response 
+            // Log the response
             Logging_1.default.info(`Outgoing -> Method: [${req.method}] - Url: [${req.url}] - IP: [${req.socket.remoteAddress}] - Status [${res.statusCode}]`);
         });
         next();
     });
     router.use(express_1.default.urlencoded({ extended: true }));
     router.use(express_1.default.json());
-    // Rules of our API 
+    // Rules of our API
     router.use((req, res, next) => {
         res.header('Access-Control-Alllow-Origin', '*');
         res.header('Acces-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -47,7 +47,7 @@ const StartServer = () => {
         }
         next();
     });
-    // Routes 
+    // Routes
     router.use('/users', User_1.default);
     router.use('/artworks', Artwork_1.default);
     router.use('/inquiries', Inquire_1.default);

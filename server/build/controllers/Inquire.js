@@ -9,7 +9,11 @@ const createInquire = (req, res, next) => {
     const { user, color, prompt, design, details } = req.body;
     const inquire = new Inquire_1.default({
         _id: new mongoose_1.default.Types.ObjectId(),
-        user, color, prompt, design, details
+        user,
+        color,
+        prompt,
+        design,
+        details
     });
     return inquire
         .save()
@@ -20,9 +24,11 @@ const readInquire = (req, res, next) => {
     const inquireId = req.params.inquireId;
     return Inquire_1.default.findById(inquireId)
         .populate('user')
-        .then((inquire) => (inquire ? res.status(200).json({ inquire }) : res.status(404).json({
-        message: 'Not found'
-    })))
+        .then((inquire) => inquire
+        ? res.status(200).json({ inquire })
+        : res.status(404).json({
+            message: 'Not found'
+        }))
         .catch((error) => res.status(500).json({ error }));
 };
 const readAll = (req, res, next) => {
@@ -51,8 +57,7 @@ const updateInquire = (req, res, next) => {
 const deleteInquire = (req, res, next) => {
     const inquireId = req.params.inquireId;
     return Inquire_1.default.findByIdAndDelete(inquireId)
-        .then(inquire => (inquire ? res.status(201).json({ message: 'deleted' }) : res.status(404)
-        .json({ message: 'Not found' })))
+        .then((inquire) => (inquire ? res.status(201).json({ message: 'deleted' }) : res.status(404).json({ message: 'Not found' })))
         .catch((error) => res.status(500).json({ error }));
 };
 exports.default = { createInquire, readInquire, readAll, updateInquire, deleteInquire };

@@ -29,7 +29,7 @@ const InquireSchema = new mongoose_1.Schema({
     color: { type: String, required: true },
     prompt: { type: String, required: true },
     design: { type: String, required: true },
-    details: { type: String, required: true },
+    details: { type: String, required: true }
 }, {
     timestamps: true
 });
