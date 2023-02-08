@@ -3,7 +3,7 @@ export default function LandingPage() {
   return (
     <div>
       <p>Landing Page</p>
-      <img src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"></img>
+      {/* <img src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"></img> */}
     </div>
   );
 }
