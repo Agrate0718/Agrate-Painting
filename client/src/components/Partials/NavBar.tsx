@@ -6,7 +6,7 @@ export default function NavBar() {
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link to={"/"} className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-grey-500 text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-700">
-            Gallery
+            Agrate Painting
           </span>
         </Link>
         <div className="flex md:order-2">
