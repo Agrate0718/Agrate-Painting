@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Artlist from "../components/Partials/ArtList";
 
 export default function Test() {
   console.log("test page");
   const server = process.env.REACT_APP_SERVER_URL;
-  //   const allArtworks =
-  //   console.log(allArtworks);
 
   // Artwork from the backend
   const [artworks, setArtworks] = useState([]);
@@ -13,10 +12,15 @@ export default function Test() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
+    console.log("useEffect happened");
     const getArtworks = async () => {
+      console.log("getArtworks function called");
       try {
-        const response = await axios.get(`${server}/artworks/get`);
-        const artData = response.data.artworks;
+        console.log("try block called");
+        const response = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/artworks/get`
+        );
+        const artData = response.data;
         console.log("response:", response);
         setArtworks(artData);
       } catch (err: any) {
@@ -27,11 +31,13 @@ export default function Test() {
       }
     };
     getArtworks();
-  }, []);
+  }); // fire on page load
   console.log("artworks:", artworks);
+
   return (
     <div>
       <p>Test h Page</p>
+      <Artlist artworks={artworks} />;<p>{errorMessage}</p>
     </div>
   );
 }
