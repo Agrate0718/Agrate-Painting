@@ -13,6 +13,8 @@ const Artwork_1 = __importDefault(require("./routes/Artwork"));
 const Inquire_1 = __importDefault(require("./routes/Inquire"));
 const Order_1 = __importDefault(require("./routes/Order"));
 const router = (0, express_1.default)();
+const cors = require('cors');
+router.use(cors());
 // Connect to Mongo
 mongoose_1.default
     .connect(config_1.config.mongo.url, { retryWrites: true, w: 'majority' })

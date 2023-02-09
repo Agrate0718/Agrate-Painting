@@ -9,6 +9,9 @@ import inquireRoutes from './routes/Inquire';
 import orderRoutes from './routes/Order';
 
 const router = express();
+const cors = require('cors');
+
+router.use(cors());
 
 // Connect to Mongo
 mongoose
