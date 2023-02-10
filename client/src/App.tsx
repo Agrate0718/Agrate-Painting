@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/Pages/LandingPage";
 import NavBar from "./components/Partials/NavBar";
-import Test from "./test-folder/Test";
+import AllArtworks from "./test-folder/AllArtworks";
+import Test from "./test-folder/AllArtworks";
 
 export default function App() {
   return (
@@ -10,11 +11,11 @@ export default function App() {
         <header className=" py-9">
           <NavBar />
         </header>
-        <main className="bg-green-500 relative">
+        <main className="">
           <Routes>
             <Route path="/" element={<LandingPage />} />
 
-            <Route path="/test" element={<Test />} />
+            <Route path="/AllArt" element={<AllArtworks />} />
           </Routes>
         </main>
       </div>

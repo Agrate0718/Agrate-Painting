@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import Artlist from "../components/Partials/ArtList";
 import ArtWorkCard from "../components/Partials/ArtworkCard";
 let x = 0;
-export default function Test() {
+export default function AllArtworks() {
   console.log("test page");
   const server = process.env.REACT_APP_SERVER_URL;
 
@@ -26,7 +26,7 @@ export default function Test() {
         //   return course.title.toLowerCase().includes(search.toLowerCase());
         // });
         const artData = response.data.artworks;
-        console.log("response:", response);
+        console.log("response:", artData);
         setArtworks(artData);
       } catch (err: any) {
         console.warn(err);
@@ -43,9 +43,9 @@ export default function Test() {
   });
 
   return (
-    <div>
-      <p>Test h Page </p>
-      {artworkCardComponents};<p>{errorMessage}</p>
+    <div className="flex  flex-wrap mt-4 mb-8  justify-center justify-around">
+      {artworkCardComponents}
+      <p>{errorMessage}</p>
     </div>
   );
 }
