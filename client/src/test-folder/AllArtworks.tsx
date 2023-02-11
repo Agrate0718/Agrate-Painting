@@ -43,9 +43,11 @@ export default function AllArtworks() {
   });
 
   return (
-    <div className="flex  flex-wrap mt-4 mb-8  justify-center justify-around">
-      {artworkCardComponents}
-      <p>{errorMessage}</p>
+    <div className="flex items-center justify-center my-20">
+      <div className=" grid gap-5 w-10/12  lg:grid-cols-3 md:grid-cols-2  place-items-center">
+        {artworkCardComponents}
+        <p>{errorMessage}</p>
+      </div>
     </div>
   );
 }
