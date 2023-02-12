@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import Artlist from "../components/Partials/ArtList";
 import ArtWorkCard from "../components/Partials/ArtworkCard";
-let x = 0;
+import Carousel from "../components/Partials/Carousel";
 export default function AllArtworks() {
   console.log("test page");
   const server = process.env.REACT_APP_SERVER_URL;
@@ -43,10 +43,14 @@ export default function AllArtworks() {
   });
 
   return (
-    <div className="flex items-center justify-center my-20">
-      <div className=" grid gap-5 w-10/12  lg:grid-cols-3 md:grid-cols-2  place-items-center">
-        {artworkCardComponents}
-        <p>{errorMessage}</p>
+    <div className="">
+      <h1 className="text-xl">Featured Artworks</h1>
+      <Carousel />
+      <div className="flex bg-yellow-500 items-center justify-center my-20">
+        <div className=" bg-green-500 grid gap-5 w-10/12  lg:grid-cols-3 md:grid-cols-2  place-items-center">
+          {artworkCardComponents}
+          <p>{errorMessage}</p>
+        </div>
       </div>
     </div>
   );

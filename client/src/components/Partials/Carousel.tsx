@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import {
   CarouselProvider,
   Slider,
@@ -12,8 +12,8 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 
 export default function Carousel() {
   return (
-    <div className="container mx-auto">
-      <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
+    <div className="container mx-auto bg-rd-800 h-full">
+      <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4 bg-orane-800">
         {/* Carousel for desktop and large size devices */}
         <CarouselProvider
           className="lg:block hidden"
@@ -23,12 +23,14 @@ export default function Carousel() {
           visibleSlides={4}
           step={1}
           infinite={true}
+          //   children={undefined}
+          naturalSlideHeight={0}
         >
-          <div className="w-full relative flex items-center justify-center">
+          <div className="w-full   h-96 relative flex items-center justify-center">
             <ButtonBack
               role="button"
               aria-label="slide backward"
-              className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+              className="absolute bg-black opacity-50 hover:opacity-75 h-full pl-6 w-10 z-30 left-0 cursor-pointer"
               id="prev"
             >
               <svg
@@ -47,20 +49,20 @@ export default function Carousel() {
                 />
               </svg>
             </ButtonBack>
-            <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+            <div className="w-full bg-gren-800 h-full mx-auto overflow-x-hidden overflow-y-hidden">
               <Slider>
                 <div
                   id="slider"
-                  className="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700"
+                  className="h-72 flex lg:gap-4 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700"
                 >
                   <Slide index={0}>
-                    <div className="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <div className="flex flex-shrink-0 relative min-w-12 sm:w-auto  bg-grey-500">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/20200412_174733-736x1024.jpg"
                         alt="black chair and white table"
-                        className="object-cover object-center w-full"
+                        className="object-cover object-center w-full h-full"
                       />
-                      <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                      <div className=" bg-opacity-30 absolute w-full h-full p-6">
                         <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">
                           Catalog 1
                         </h2>
@@ -73,18 +75,19 @@ export default function Carousel() {
                     </div>
                   </Slide>
                   <Slide index={1}>
-                    <div className="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <div className="flex flex-shrink-0 relative w-full text-center sm:w-auto">
                       <img
                         src="https://i.ibb.co/DWrGxX6/carosel-2.png"
                         alt="sitting area"
-                        className="object-cover object-center w-full"
+                        className=" object-center object-cover w-full h-full hover:scale-110 transition duration-300s ease-in-out"
                       />
-                      <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                        <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">
+
+                      <div className="bg-gray-800 bg-opacity-30 absolute  w-full  h-full p-">
+                        {/* <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">
                           Catalog 2
-                        </h2>
-                        <div className="flex h-full items-end pb-6">
-                          <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">
+                        </h2> */}
+                        <div className="flex items-center justify-center h-full bg-cover    opacity-0 hover:opacity-100 hover:bg-opacity-25 transition-duration-1000 ease-in-out bg-black duration-300  pb-6">
+                          <h3 className="text-xl lg:text-2xl hover:text-white text-center   font-semibold  text-black">
                             Minimal Interior
                           </h3>
                         </div>
@@ -132,7 +135,7 @@ export default function Carousel() {
                   <Slide index={4}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -208,7 +211,7 @@ export default function Carousel() {
                   <Slide index={8}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -287,7 +290,8 @@ export default function Carousel() {
             <ButtonNext
               role="button"
               aria-label="slide forward"
-              className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+              // className=" bg-black opacity-50 hover:opacity-75 h-full pr-4 w z-30 right-0 cursor-pointer"
+              className=" bg-black opacity-50 hover:opacity-75 h-full pr-2 w z-30 right-0 cursor-pointer"
               id="next"
             >
               <svg
@@ -318,6 +322,8 @@ export default function Carousel() {
           visibleSlides={2}
           step={1}
           infinite={true}
+          //   children={undefined}
+          naturalSlideHeight={0}
         >
           <div className="w-full relative flex items-center justify-center">
             <ButtonBack
@@ -351,7 +357,7 @@ export default function Carousel() {
                   <Slide index={0}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -427,7 +433,7 @@ export default function Carousel() {
                   <Slide index={4}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -503,7 +509,7 @@ export default function Carousel() {
                   <Slide index={8}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -613,6 +619,8 @@ export default function Carousel() {
           visibleSlides={1}
           step={1}
           infinite={true}
+          //   children={undefined}
+          naturalSlideHeight={0}
         >
           <div className="w-full relative flex items-center justify-center">
             <ButtonBack
@@ -646,7 +654,7 @@ export default function Carousel() {
                   <Slide index={0}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -722,7 +730,7 @@ export default function Carousel() {
                   <Slide index={4}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -798,7 +806,7 @@ export default function Carousel() {
                   <Slide index={8}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
