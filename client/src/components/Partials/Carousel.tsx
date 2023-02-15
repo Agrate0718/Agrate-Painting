@@ -290,8 +290,7 @@ export default function Carousel() {
             <ButtonNext
               role="button"
               aria-label="slide forward"
-              // className=" bg-black opacity-50 hover:opacity-75 h-full pr-4 w z-30 right-0 cursor-pointer"
-              className=" bg-black opacity-50 hover:opacity-75 h-full pr-2 w z-30 right-0 cursor-pointer"
+              className="absolute z-30 right-0  h-full w-10  pr-6 bg-black opacity-50 hover:opacity-75 "
               id="next"
             >
               <svg
@@ -322,7 +321,6 @@ export default function Carousel() {
           visibleSlides={2}
           step={1}
           infinite={true}
-          //   children={undefined}
           naturalSlideHeight={0}
         >
           <div className="w-full relative flex items-center justify-center">
@@ -357,7 +355,7 @@ export default function Carousel() {
                   <Slide index={0}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
+                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -433,7 +431,7 @@ export default function Carousel() {
                   <Slide index={4}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
+                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -509,7 +507,7 @@ export default function Carousel() {
                   <Slide index={8}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
+                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -619,7 +617,6 @@ export default function Carousel() {
           visibleSlides={1}
           step={1}
           infinite={true}
-          //   children={undefined}
           naturalSlideHeight={0}
         >
           <div className="w-full relative flex items-center justify-center">
@@ -654,7 +651,7 @@ export default function Carousel() {
                   <Slide index={0}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
+                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -730,7 +727,7 @@ export default function Carousel() {
                   <Slide index={4}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
+                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />
@@ -806,7 +803,7 @@ export default function Carousel() {
                   <Slide index={8}>
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto">
                       <img
-                        src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"
+                        src="https://i.ibb.co/fDngH9G/carosel-1.png"
                         alt="black chair and white table"
                         className="object-cover object-center w-full"
                       />

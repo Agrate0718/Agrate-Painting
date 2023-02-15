@@ -1,9 +1,17 @@
+import Carousel from "../Partials/Carousel";
+
 export default function LandingPage() {
-  console.log(process.env.REACT_APP_SERVER_URL);
   return (
-    <div>
-      <p>Landing Page</p>
-      {/* <img src="https://aaaimagebucket.s3.us-east-1.amazonaws.com/2020/04/Emerging-Butterfly-Giclee-745x1024.jpg"></img> */}
+    <div className="">
+      <h1 className="text-2xl text-center font-bold ">AGRATE PAINTINGS</h1>
+      <h1 className="text-xl">Featured Artworks</h1>
+      <h1>View all here</h1>
+      <Carousel />
+      <div className="flex  items-center justify-center my-20">
+        <div className="  grid gap-5 w-10/12  lg:grid-cols-3 md:grid-cols-2  place-items-center">
+          greetings go here
+        </div>
+      </div>
     </div>
   );
 }

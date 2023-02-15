@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AboutPage from "./components/Pages/AboutPage";
+import AllArtworks from "./components/Pages/AllArtworks";
 import LandingPage from "./components/Pages/LandingPage";
 import NavBar from "./components/Partials/NavBar";
-import AllArtworks from "./test-folder/AllArtworks";
-import Test from "./test-folder/AllArtworks";
 
 export default function App() {
   return (
@@ -16,6 +16,8 @@ export default function App() {
             <Route path="/" element={<LandingPage />} />
 
             <Route path="/AllArt" element={<AllArtworks />} />
+
+            <Route path="/About" element={<AboutPage />} />
           </Routes>
         </main>
       </div>

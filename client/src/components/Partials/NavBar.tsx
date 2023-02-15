@@ -132,6 +132,14 @@ export default function NavBar() {
                 AllArt
               </Link>
             </li>
+            <li>
+              <Link
+                to={"/About"}
+                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-grey-500 dark:hover:bg-gray-700 dark:hover:text-grey-500 md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                About
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
