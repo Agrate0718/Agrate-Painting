@@ -1,6 +1,48 @@
 import { Link } from "react-router-dom";
+type NavBarProps = {
+  currentUser: any;
+  handleLogout: any;
+};
 
-export default function NavBar() {
+export default function NavBar({ currentUser, handleLogout }: NavBarProps) {
+  const loggedIn = () => {
+    return (
+      <div className="hidden lg:flex gap-0 absolute opacity-0 lg:gap-3 lg:relative lg:opacity-100">
+        {/* if the user is logged in... */}
+        <Link
+          to="/courses/new"
+          className="hover:text-bloom-sage focus:text-bloom-olive"
+        >
+          Create New Course
+        </Link>
+        {" | "}
+
+        <Link
+          to={`/users/${currentUser.id}/cart`}
+          className="hover:text-bloom-sage focus:text-bloom-olive"
+        >
+          View Cart
+        </Link>
+        {" | "}
+
+        <Link
+          to={`/users/${currentUser.id}`}
+          className="hover:text-bloom-sage focus:text-bloom-olive"
+        >
+          Profile
+        </Link>
+        {" | "}
+
+        <Link to="/" className="hover:text-bloom-sage focus:text-bloom-olive">
+          <span onClick={handleLogout}>Logout</span>
+        </Link>
+      </div>
+    );
+  };
+
+  const loggedOut = () => {
+    return <div>Logged out </div>;
+  };
   return (
     <div>
       <nav className=" fixed w-full z-50 top-0 left-0 bg-black border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-900">
@@ -136,6 +178,7 @@ export default function NavBar() {
             </ul>
           </div>
         </div>
+        {currentUser ? loggedIn() : loggedOut()}
       </nav>
     </div>
   );
