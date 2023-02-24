@@ -1,4 +1,5 @@
 import Carousel from "../Partials/Carousel";
+import Footer from "../Partials/Footer";
 
 export default function LandingPage() {
   return (
@@ -8,10 +9,12 @@ export default function LandingPage() {
       <h1>View all here</h1>
       <Carousel />
       <div className="flex  items-center justify-center my-20">
-        <div className="  grid gap-5 w-10/12  lg:grid-cols-3 md:grid-cols-2  place-items-center">
-          greetings go here
+        <div className=" bg-rd-500 text-4xl ">
+          Welcome to Agrate Paintings. This Site host all of Shaily Agrate's
+          fantastic artwork
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

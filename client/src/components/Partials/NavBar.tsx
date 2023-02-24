@@ -178,7 +178,7 @@ export default function NavBar({ currentUser, handleLogout }: NavBarProps) {
             </ul>
           </div>
         </div>
-        {currentUser ? loggedIn() : loggedOut()}
+        {/* {currentUser ? loggedIn() : loggedOut()} */}
       </nav>
     </div>
   );
