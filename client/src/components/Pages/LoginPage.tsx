@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import jwt_decode from "jwt-decode";
+import Footer from "../Partials/Footer";
 
 type LoginPageProps = {
   currentUser: any;
@@ -46,87 +47,20 @@ export default function LoginPage({
     }
   };
   return (
-    // <div className="flex flex-wrap items-center justify-center my-20 w-[484] h-[1240px]">
-    <div className="  grid gap-20 w-[484]  grid-cols-2   place-items-center h-[1240px] bg-blue-200">
-      <form
-        className=" w-full flex justify-center items-center flex-wrap  bg-red-500"
-        onSubmit={handleSubmit}
-      >
-        {/* <!-- Email input --> */}
-        <div className="mb-6 ">
-          <p className="mb-.1">Login</p>
-          <p className="mb-.1">Email Address *</p>
-          <input
-            type="email"
-            id="email"
-            className="w-[500px] h-[42px] border-solid border-2 border-black  p-2.5 "
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            required
-          />
-        </div>
-
-        {/* <!-- Password input --> */}
-        <div className="mb-6">
-          <p>Password *</p>
-          <input
-            type="password"
-            id="password"
-            className="w-[500px] h-[42px] border-solid border-2 border-black  p-2.5"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-            required
-          />
-        </div>
-
-        {/* <!-- Submit button --> */}
-        <button
-          type="submit"
-          className="w-[500px] h-[42px] bg-blue-400 rounded  "
-          data-mdb-ripple="true"
-          data-mdb-ripple-color="light"
-        >
-          Sign in
-        </button>
-      </form>
-
-      <div className=" ">
+    <div>
+      <div className="  grid gap-20 w-[484]  grid-cols-2   place-items-center h-[1240px] bg-blue-200">
         <form
-          className="  bg-orage-500 w-full flex justify-center items-center flex-wrap grid grid-cols-2 grid-cols-[300px]"
+          className=" w-full flex justify-center items-center flex-wrap  bg-red-500"
           onSubmit={handleSubmit}
         >
-          {/* <!-- First Name input --> */}
-          <p className="mb  col-span-2 ">Register</p>
-          <div className="mb-6 ">
-            <p className="mb-.1">First Name *</p>
-            <input
-              type="email"
-              id="email"
-              className="w-[235px] h-[42px] border-solid border-2 border-black  p-2.5 "
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              required
-            />
-          </div>
-          {/* <!-- Last Name input --> */}
-          <div className="mb-6 ">
-            <p className="mb-.1">Last Name *</p>
-            <input
-              type="email"
-              id="email"
-              className="w-[235px] h-[42px] border-solid border-2 border-black  p-2.5 "
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              required
-            />
-          </div>
           {/* <!-- Email input --> */}
-          <div className="mb-6 col-end-3 col-span-2 border-2 ">
+          <div className="mb-6 ">
+            <p className="mb-.1">Login</p>
             <p className="mb-.1">Email Address *</p>
             <input
               type="email"
               id="email"
-              className="w-[500px] h-[42px] border-solid  border-black  p-2.5 "
+              className="w-[500px] h-[42px] border-solid border-2 border-black  p-2.5 "
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               required
@@ -134,12 +68,12 @@ export default function LoginPage({
           </div>
 
           {/* <!-- Password input --> */}
-          <div className="mb-6 col-end-3 col-span-2 border-2">
+          <div className="mb-6">
             <p>Password *</p>
             <input
               type="password"
               id="password"
-              className="w-[500px] h-[42px] border-solid  border-black  p-2.5"
+              className="w-[500px] h-[42px] border-solid border-2 border-black  p-2.5"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               required
@@ -156,8 +90,76 @@ export default function LoginPage({
             Sign in
           </button>
         </form>
+
+        <div className=" ">
+          <form
+            className="  bg-orage-500 w-full flex justify-center items-center flex-wrap grid grid-cols-2 grid-cols-[300px]"
+            onSubmit={handleSubmit}
+          >
+            {/* <!-- First Name input --> */}
+            <p className="mb  col-span-2 ">Register</p>
+            <div className="mb-6 ">
+              <p className="mb-.1">First Name *</p>
+              <input
+                type="email"
+                id="email"
+                className="w-[235px] h-[42px] border-solid border-2 border-black  p-2.5 "
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required
+              />
+            </div>
+            {/* <!-- Last Name input --> */}
+            <div className="mb-6 ">
+              <p className="mb-.1">Last Name *</p>
+              <input
+                type="email"
+                id="email"
+                className="w-[235px] h-[42px] border-solid border-2 border-black  p-2.5 "
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required
+              />
+            </div>
+            {/* <!-- Email input --> */}
+            <div className="mb-6 col-end-3 col-span-2 border-2 ">
+              <p className="mb-.1">Email Address *</p>
+              <input
+                type="email"
+                id="email"
+                className="w-[500px] h-[42px] border-solid  border-black  p-2.5 "
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required
+              />
+            </div>
+
+            {/* <!-- Password input --> */}
+            <div className="mb-6 col-end-3 col-span-2 border-2">
+              <p>Password *</p>
+              <input
+                type="password"
+                id="password"
+                className="w-[500px] h-[42px] border-solid  border-black  p-2.5"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                required
+              />
+            </div>
+
+            {/* <!-- Submit button --> */}
+            <button
+              type="submit"
+              className="w-[500px] h-[42px] bg-blue-400 rounded  "
+              data-mdb-ripple="true"
+              data-mdb-ripple-color="light"
+            >
+              Sign in
+            </button>
+          </form>
+        </div>
       </div>
+      <Footer />
     </div>
-    // </div>
   );
 }
