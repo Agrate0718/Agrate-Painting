@@ -6,6 +6,8 @@ import LoginPage from "./components/Pages/LoginPage";
 import NavBar from "./components/Partials/NavBar";
 import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
+import Footer from "./components/Partials/Footer";
+import CartPage from "./components/Pages/CartPage";
 
 export default function App() {
   // interface currentUser{
@@ -64,8 +66,11 @@ export default function App() {
                 />
               }
             />
+
+            <Route path="/Cart" element={<CartPage />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );

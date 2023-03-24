@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import ArtWorkCard from "../Partials/ArtworkCard";
-import Footer from "../Partials/Footer";
 
 export default function AllArtworks() {
   console.log("test page");
@@ -52,7 +51,6 @@ export default function AllArtworks() {
           <p>{errorMessage}</p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

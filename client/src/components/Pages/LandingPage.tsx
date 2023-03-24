@@ -1,5 +1,4 @@
 import Carousel from "../Partials/Carousel";
-import Footer from "../Partials/Footer";
 
 export default function LandingPage() {
   return (
@@ -14,7 +13,6 @@ export default function LandingPage() {
           fantastic artwork
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

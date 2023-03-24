@@ -53,7 +53,11 @@ export default function NavBar({ currentUser, handleLogout }: NavBarProps) {
             </span>
           </Link>
           <div className="flex md:order-2">
-            <button
+            <Link to={"/cart"}>
+              <p className="text-white">Cart</p>
+            </Link>
+
+            {/* <button
               type="button"
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
@@ -74,8 +78,8 @@ export default function NavBar({ currentUser, handleLogout }: NavBarProps) {
                 ></path>
               </svg>
               <span className="sr-only">Search</span>
-            </button>
-            <div className="relative hidden md:block">
+            </button> */}
+            {/* <div className="relative hidden md:block">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
                   className="w-5 h-5 text-grey-500"
@@ -120,7 +124,7 @@ export default function NavBar({ currentUser, handleLogout }: NavBarProps) {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </button> */}
           </div>
           <div
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
@@ -145,11 +149,11 @@ export default function NavBar({ currentUser, handleLogout }: NavBarProps) {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-grey-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-green-500 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-grey-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
               />
             </div>
-            <ul className="flex flex-col  p-4 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-black">
+            <ul className="flex flex-col  p-4 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-blue-500">
               <li>
                 <Link
                   to={"/Login"}
