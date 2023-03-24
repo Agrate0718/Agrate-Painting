@@ -48,12 +48,11 @@ export default function LoginPage({
   return (
     <div>
       <div className=" flex items-center block justify-center h-[550px] mt-6  ">
-        <div className=""></div>
         <div className="  grid gap-20 w-[484]  grid-cols-2    h-[500px]  ">
-          <div className=" row-span-1">
-            <h2 className="">Login</h2>
+          <div>
+            <p>Login</p>
             <form
-              className="  w-full flex justify-center items-center flex-wrap grid grid-cols-1 grid-cols-[300px]"
+              className="  w-full flex justify-center items-center flex-wrap grid grid-cols-1 "
               onSubmit={handleSubmit}
             >
               {/* <!-- Email input --> */}
@@ -95,7 +94,7 @@ export default function LoginPage({
             </form>
           </div>
 
-          <div className="">
+          <div>
             {" "}
             <h2>Register</h2>
             <form
