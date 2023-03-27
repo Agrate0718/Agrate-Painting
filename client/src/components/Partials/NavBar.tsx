@@ -153,7 +153,7 @@ export default function NavBar({ currentUser, handleLogout }: NavBarProps) {
                 placeholder="Search..."
               />
             </div>
-            <ul className="flex flex-col  p-4 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-blue-500">
+            <ul className="flex flex-col  p-4 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
               <li>
                 <Link
                   to={"/Login"}
