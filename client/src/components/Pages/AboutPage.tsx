@@ -22,3 +22,32 @@ export default function AboutPage() {
     </div>
   );
 }
+
+// export default function AboutPage() {
+//   return (
+//     <div className="h-[741px]">
+//       <div className="w-full flex items-center justify-center w-full h-[741px]">
+//         <div className="grid grid-cols-2 w-[1140px] ">
+//           <div className="border-[20px] border-red-900 w-[456px] h-[642px] p-[20px] "></div>
+//           <div className="pl-40 pt-20">
+//             <p>About Me</p>
+//             <p className="w-[500px] ">
+//               Podcasting operational change management inside of workflows to
+//               establish a framework. Taking seamless key performance indicators
+//               offline to maximise the long tail. Keeping your eye on the ball
+//               while performing a deep dive on the start-up mentality to derive
+//               convergence on cross-platform integration. Objectively innovate
+//               empowered manufactured products whereas parallel platforms.
+//               Holisticly predominate extensible testing procedures for reliable
+//               supply chains. Dramatically engage top-line web services vis-a-vis
+//               cutting-edge deliverables.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//       <div className="z-10 relative static bottom-[550px] left-[500px] ">
+//         <img src={img} alt="" className="h-[378px] w-[378px] rounded-full  " />
+//       </div>
+//     </div>
+//   );
+// }
