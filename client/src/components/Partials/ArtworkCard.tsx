@@ -4,13 +4,9 @@ export default function ArtWorkCard(Artwork: any) {
   return (
     <div className="  ">
       <div className="  max-w-1/3 rounded overflow-hidden shadow-lg">
-        <img
-          className="w-full"
-          src={Art.picture}
-          alt="Sunset in the mountains"
-        />
+        <img className="w-full" src={Art.picture} alt={Art.title} />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <div className="font-bold text-xl mb-2">{Art.title}</div>
           <p className="text-gray-700 text-base">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Voluptatibus quia, nulla! Maiores et perferendis eaque,
